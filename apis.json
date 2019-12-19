@@ -1,0 +1,95 @@
+{
+    "name": "Snipcart",
+    "description": "Add a shopping cart to your site in minutes. Works with any site builder, CMS, and framework. 6500+ e-commerce merchants trust our shopping cart solution. Join them!",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2025-snipcart.jpg",
+    "tags": [
+        "commerce",
+        "have api",
+        "shopping",
+        "target",
+        "webhook implementations"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/snipcart\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Snipcart",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2025-snipcart.jpg",
+            "humanURL": "https:\/\/docs.snipcart.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/snipcart-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/snipcart-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Base",
+            "url": "https:\/\/app.snipcart.com\/api"
+        },
+        {
+            "type": "Blog",
+            "url": "https:\/\/snipcart.com\/blog"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "https:\/\/snipcart.com\/blog\/rss"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/snipcart"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/snipcart"
+        },
+        {
+            "type": "Developers",
+            "url": "http:\/\/docs.snipcart.com\/"
+        },
+        {
+            "type": "Email",
+            "url": "geeks+suggestions@snipcart.com"
+        },
+        {
+            "type": "Email",
+            "url": "geeks@snipcart.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/snipcart"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/snipcart.com\/pricing"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/snipcart"
+        },
+        {
+            "type": "Webhooks",
+            "url": "https:\/\/docs.snipcart.com\/webhooks\/introduction"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/snipcart.com"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/docs.snipcart.com"
+        }
+    ]
+}
