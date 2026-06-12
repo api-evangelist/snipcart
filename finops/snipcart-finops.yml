@@ -1,0 +1,65 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+provider: Snipcart
+providerId: snipcart
+created: '2026-06-12'
+modified: '2026-06-12'
+billingModel:
+  type: transaction-percentage
+  description: >
+    Snipcart charges 2% per transaction for merchants with over $1,000 USD
+    in monthly sales. For merchants under $1,000 USD/month, a flat $20/month
+    fee applies. The test/development environment is permanently free.
+  currency: USD
+  minimumMonthlyCharge: 20
+  transactionFeePercent: 2
+  thresholdUSD: 1000
+focusColumns:
+  - BilledCost
+  - EffectiveCost
+  - ChargeType
+  - ServiceName
+  - SkuId
+  - UsageQuantity
+  - UsageUnit
+  - ResourceId
+meters:
+  - name: Transaction Volume
+    unit: transaction
+    description: Each completed purchase through the Snipcart checkout
+    billingFormula: max(transaction_value * 0.02, 0)
+    notes: >
+      When total monthly sales >= $1,000 USD, each transaction is charged 2%
+      of transaction value. When total monthly sales < $1,000 USD, flat $20/mo
+      fee covers all transactions for the month.
+  - name: Monthly Minimum
+    unit: month
+    description: Minimum monthly platform fee when sales are under $1,000 USD
+    billingFormula: 20 USD flat if monthly_sales_usd < 1000
+  - name: Payment Gateway Fees
+    unit: transaction
+    description: >
+      External payment gateway processing fees charged by the selected
+      gateway (e.g., Stripe, PayPal). These are in addition to Snipcart's fee.
+    billingFormula: varies by payment gateway
+principles:
+  - name: Visibility
+    description: >
+      Monitor transaction volume and value monthly to forecast whether
+      the $20 flat fee or the 2% transaction model applies. Use the
+      Snipcart merchant dashboard and REST API orders endpoint to track
+      sales in real time.
+    actions:
+      - Query the /orders endpoint to aggregate monthly sales totals
+      - Track transaction count and value per billing period
+      - Set up webhooks on order events to maintain real-time revenue visibility
+  - name: Optimization
+    description: >
+      At low sales volumes (under $1,000 USD/month), costs are capped at $20.
+      As sales scale, the 2% model becomes active. Optimize by monitoring the
+      threshold and projecting monthly fees based on transaction trends.
+    actions:
+      - Calculate break-even point: $1,000/month in sales is the threshold
+      - Use abandoned cart recovery features to maximize revenue per transaction
+      - Evaluate payment gateway fee structures to minimize total cost per sale
+      - Use test mode (free) for all development and integration work

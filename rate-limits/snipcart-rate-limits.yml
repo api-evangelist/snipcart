@@ -1,0 +1,38 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: Snipcart
+providerId: snipcart
+created: '2026-06-12'
+modified: '2026-06-12'
+notes: >
+  Snipcart does not publicly document explicit rate limit thresholds in its
+  API documentation. The API uses HTTP Basic Auth with secret API keys. The
+  platform responds with standard HTTP 429 Too Many Requests when throttled.
+  Contact Snipcart support for specific rate limit details per account tier.
+headers:
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+  success: 200
+  unauthorized: 401
+  notFound: 404
+limits:
+  - name: REST API Requests
+    scope: account
+    metric: requests
+    limit: null
+    timeFrame: null
+    notes: >
+      Specific request rate limits are not publicly documented. Standard
+      REST API throttling applies; monitor for 429 responses and implement
+      exponential backoff.
+  - name: Webhook Delivery
+    scope: store
+    metric: webhook_requests
+    limit: null
+    timeFrame: null
+    notes: >
+      Webhook endpoints must respond with HTTP 200 and Content-Type application/json.
+      Snipcart provides retry logic and request logs via the merchant dashboard.
+      The X-Snipcart-RequestToken header contains a token valid for one hour
+      for request authenticity verification.

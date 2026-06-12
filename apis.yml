@@ -1,0 +1,79 @@
+aid: snipcart
+name: Snipcart
+description: >
+  Snipcart is a developer-first shopping cart platform that enables merchants to add
+  fully functional e-commerce to any website by embedding a JavaScript snippet. It
+  provides a REST API accessible at https://app.snipcart.com/api for managing orders,
+  customers, products, discounts, notifications, abandoned carts, and custom shipping
+  methods. Authentication uses HTTP Basic Auth with a secret API key generated from the
+  merchant dashboard, and the platform supports webhooks for real-time event notifications
+  on orders, subscriptions, shipping, and taxes. Snipcart is stack-agnostic and integrates
+  with static site generators, headless CMSs, and modern JavaScript frameworks.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - E-Commerce
+  - Shopping Cart
+  - Orders
+  - Products
+  - Payments
+  - Webhooks
+  - Headless Commerce
+  - Jamstack
+url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/apis.yml
+created: '2026-06-12'
+modified: '2026-06-12'
+specificationVersion: '0.19'
+apis:
+  - aid: snipcart:snipcart-rest-api
+    name: Snipcart REST API
+    description: >
+      The Snipcart REST API provides programmatic access to your store's data including
+      orders, customers, products, discounts, notifications, abandoned carts, domains,
+      refunds, user sessions, and custom shipping methods. It uses HTTP Basic Auth with
+      a secret API key and accepts only application/json content type.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+    baseURL: https://app.snipcart.com/api
+    tags:
+      - Orders
+      - Customers
+      - Products
+      - Discounts
+      - Webhooks
+      - E-Commerce
+    properties:
+      - type: Documentation
+        url: https://docs.snipcart.com/v3/api-reference/introduction
+      - type: Authentication
+        url: https://docs.snipcart.com/v3/api-reference/authentication
+common:
+  - type: Website
+    url: https://snipcart.com
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: GitHubOrganization
+    url: https://github.com/snipcart
+  - type: LinkedIn
+    url: https://ca.linkedin.com/company/snipcart
+  - type: Blog
+    url: https://snipcart.com/blog
+  - type: Pricing
+    url: https://snipcart.com/pricing
+  - type: StatusPage
+    url: https://status.snipcart.com
+  - type: X
+    url: https://twitter.com/snipcart
+  - type: ReleaseNotes
+    url: https://docs.snipcart.com/v3/release-notes
+  - type: Webhooks
+    url: https://docs.snipcart.com/v3/webhooks/introduction
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/plans/snipcart-plans-pricing.yml
+  - type: RateLimits
+    url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/rate-limits/snipcart-rate-limits.yml
+  - type: FinOps
+    url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/finops/snipcart-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

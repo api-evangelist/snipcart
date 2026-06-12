@@ -1,0 +1,120 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+provider: Snipcart
+providerId: snipcart
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+plans:
+  - name: Test / Development
+    slug: test-development
+    type: free
+    description: >
+      Forever free test and development environment. No credit card required.
+      Allows full integration and testing of the Snipcart platform without
+      any transaction fees or time limits.
+    limits:
+      - type: boolean
+        name: Test Mode Access
+        value: true
+      - type: boolean
+        name: Full API Access
+        value: true
+      - type: boolean
+        name: Webhook Access
+        value: true
+    price:
+      amount: 0
+      currency: USD
+      period: monthly
+  - name: Standard (Under $1k/mo Sales)
+    slug: standard-under-1k
+    type: paid
+    description: >
+      For merchants with monthly sales under $1,000 USD. Flat monthly fee
+      instead of percentage-based transaction fee. Includes full API access,
+      webhooks, unlimited products, and all integrations.
+    limits:
+      - type: quota
+        name: Monthly Sales Cap
+        metric: sales_usd
+        limit: 999
+        unit: USD
+      - type: boolean
+        name: Unlimited Products
+        value: true
+      - type: boolean
+        name: Full API Access
+        value: true
+      - type: boolean
+        name: Webhook Access
+        value: true
+      - type: boolean
+        name: Abandoned Cart Recovery
+        value: true
+      - type: boolean
+        name: Inventory Management
+        value: true
+      - type: boolean
+        name: Multi-Currency Support
+        value: true
+    price:
+      amount: 20
+      currency: USD
+      period: monthly
+  - name: Standard (2% Transaction Fee)
+    slug: standard-transaction
+    type: paid
+    description: >
+      For merchants with monthly sales over $1,000 USD. Charged at 2% per
+      transaction plus payment gateway fees. Includes all features: unlimited
+      products, variants, discounts, domains, tax rates, six payment gateways,
+      full API and webhook access, customer accounts, multi-currency, abandoned
+      cart recovery, inventory management, real-time shipping, and tax integrations.
+    limits:
+      - type: metered
+        name: Transaction Fee
+        metric: transaction_value
+        limit: 2
+        unit: percent
+      - type: boolean
+        name: Unlimited Products
+        value: true
+      - type: boolean
+        name: Unlimited Variants
+        value: true
+      - type: boolean
+        name: Unlimited Discounts
+        value: true
+      - type: boolean
+        name: Unlimited Domains
+        value: true
+      - type: boolean
+        name: Full API Access
+        value: true
+      - type: boolean
+        name: Webhook Access
+        value: true
+      - type: boolean
+        name: Abandoned Cart Recovery
+        value: true
+      - type: boolean
+        name: Inventory Management
+        value: true
+      - type: boolean
+        name: Multi-Currency Support
+        value: true
+      - type: boolean
+        name: TaxCloud Integration
+        value: true
+      - type: boolean
+        name: TaxJar Integration
+        value: true
+      - type: boolean
+        name: Real-Time Shipping Estimates
+        value: true
+    price:
+      amount: 0
+      currency: USD
+      period: monthly
+      notes: 2% per transaction plus payment gateway fees; minimum $20/mo for sales under $1,000 USD/month
