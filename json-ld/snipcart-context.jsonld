@@ -1,0 +1,89 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "snipcart": "https://snipcart.com/vocab#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Order": "schema:Order",
+    "OrderItem": "schema:OrderItem",
+    "Customer": "schema:Person",
+    "Product": "schema:Product",
+    "Discount": "snipcart:Discount",
+    "Notification": "snipcart:Notification",
+    "Refund": "snipcart:Refund",
+    "AbandonedCart": "snipcart:AbandonedCart",
+    "UserSession": "snipcart:UserSession",
+    "Domain": "snipcart:Domain",
+
+    "token": "snipcart:token",
+    "status": "schema:orderStatus",
+    "paymentStatus": "snipcart:paymentStatus",
+    "email": "schema:email",
+    "total": "schema:price",
+    "currency": "schema:priceCurrency",
+    "completionDate": "schema:orderDate",
+    "trackingNumber": "schema:trackingNumber",
+    "trackingUrl": {
+      "@id": "snipcart:trackingUrl",
+      "@type": "@id"
+    },
+    "items": "schema:orderedItem",
+
+    "id": "@id",
+    "name": "schema:name",
+    "price": "schema:price",
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "description": "schema:description",
+    "stock": "snipcart:stock",
+    "allowOutOfStockPurchases": "snipcart:allowOutOfStockPurchases",
+    "totalSales": "snipcart:totalSales",
+    "userDefinedId": "snipcart:userDefinedId",
+
+    "code": "snipcart:discountCode",
+    "type": "snipcart:discountType",
+    "amount": "schema:price",
+    "rate": "snipcart:rate",
+    "maxNumberOfUsages": "snipcart:maxNumberOfUsages",
+    "numberOfUsages": "snipcart:numberOfUsages",
+    "expirationDate": {
+      "@id": "snipcart:expirationDate",
+      "@type": "xsd:dateTime"
+    },
+
+    "deliveryMethod": "snipcart:deliveryMethod",
+    "message": "schema:text",
+    "sentOn": {
+      "@id": "snipcart:sentOn",
+      "@type": "xsd:dateTime"
+    },
+
+    "comment": "snipcart:comment",
+    "refundedOn": {
+      "@id": "snipcart:refundedOn",
+      "@type": "xsd:dateTime"
+    },
+
+    "creationDate": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "ordersCount": "snipcart:ordersCount",
+    "totalSpent": "snipcart:totalSpent",
+    "billingAddressFirstName": "schema:givenName",
+    "billingAddressLastName": "schema:familyName",
+
+    "continuationToken": "snipcart:continuationToken",
+    "totalItems": "snipcart:totalItems",
+    "offset": "snipcart:offset",
+    "limit": "snipcart:limit",
+
+    "protocol": "snipcart:protocol",
+
+    "user": "schema:Person",
+    "quantity": "schema:orderQuantity"
+  }
+}

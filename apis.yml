@@ -47,6 +47,8 @@ apis:
         url: https://docs.snipcart.com/v3/api-reference/introduction
       - type: Authentication
         url: https://docs.snipcart.com/v3/api-reference/authentication
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/openapi/snipcart-rest-api-openapi.yml
 common:
   - type: Website
     url: https://snipcart.com
@@ -74,6 +76,12 @@ common:
     url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/rate-limits/snipcart-rate-limits.yml
   - type: FinOps
     url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/finops/snipcart-finops.yml
+  - type: BlogRSS
+    url: https://snipcart.com/blog/rss
+  - type: Vocabulary
+    url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/vocabulary/snipcart-vocabulary.yml
+  - type: JSONLDContext
+    url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/json-ld/snipcart-context.jsonld
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
