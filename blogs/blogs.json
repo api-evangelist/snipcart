@@ -3,7 +3,7 @@
   "description": "Developer-focused e-commerce content covering Jamstack, headless CMS, static site generators, JavaScript frameworks, and Snipcart integrations.",
   "url": "https://snipcart.com/blog",
   "rss": "https://snipcart.com/blog/rss",
-  "fetched": "2026-06-12",
+  "fetched": "2026-06-14T20:42:17Z",
   "posts": [
     {
       "title": "Ecommerce Integration for Ghost in 10 Minutes",
@@ -30,5 +30,23 @@
       "url": "https://snipcart.com/blog",
       "published": "2022-03-31"
     }
-  ]
+  ],
+  "repo": "snipcart",
+  "feeds": [
+    {
+      "source": "https://ca.linkedin.com/company/snipcart",
+      "feed_url": "https://ca.linkedin.com/company/snipcart",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/finops/snipcart-finops.yml",
+      "feed_url": "https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/finops/snipcart-finops.yml",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0
 }
