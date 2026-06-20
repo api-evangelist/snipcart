@@ -10,7 +10,7 @@ description: >
   on orders, subscriptions, shipping, and taxes. Snipcart is stack-agnostic and integrates
   with static site generators, headless CMSs, and modern JavaScript frameworks.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - E-Commerce
   - Shopping Cart
@@ -32,7 +32,7 @@ apis:
       orders, customers, products, discounts, notifications, abandoned carts, domains,
       refunds, user sessions, and custom shipping methods. It uses HTTP Basic Auth with
       a secret API key and accepts only application/json content type.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.snipcart.com/v3/api-reference/introduction
     baseURL: https://app.snipcart.com/api
     tags:
