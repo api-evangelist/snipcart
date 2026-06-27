@@ -1,38 +1,13 @@
 {
-  "name": "Snipcart Blog",
-  "description": "Developer-focused e-commerce content covering Jamstack, headless CMS, static site generators, JavaScript frameworks, and Snipcart integrations.",
-  "url": "https://snipcart.com/blog",
-  "rss": "https://snipcart.com/blog/rss",
-  "fetched": "2026-06-14T20:42:17Z",
-  "posts": [
-    {
-      "title": "Ecommerce Integration for Ghost in 10 Minutes",
-      "url": "https://snipcart.com/blog",
-      "published": "2022-04-29"
-    },
-    {
-      "title": "Webflow eCommerce: Creating a Full-Featured Store",
-      "url": "https://snipcart.com/blog",
-      "published": "2022-04-22"
-    },
-    {
-      "title": "Shopify Buy Button vs. Snipcart: The Side-By-Side Comparison",
-      "url": "https://snipcart.com/blog",
-      "published": "2022-04-19"
-    },
-    {
-      "title": "Headless eCommerce: A Developer's Guide",
-      "url": "https://snipcart.com/blog",
-      "published": "2022-04-11"
-    },
-    {
-      "title": "New to Jamstack? Everything You Need to Know",
-      "url": "https://snipcart.com/blog",
-      "published": "2022-03-31"
-    }
-  ],
   "repo": "snipcart",
   "feeds": [
+    {
+      "source": "https://snipcart.com/blog/rss",
+      "feed_url": "https://snipcart.com/blog/rss",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
     {
       "source": "https://ca.linkedin.com/company/snipcart",
       "feed_url": "https://ca.linkedin.com/company/snipcart",
@@ -48,5 +23,6 @@
       "method": "none"
     }
   ],
+  "fetched": "2026-06-27T12:03:07Z",
   "post_count": 0
 }
