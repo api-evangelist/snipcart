@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/snipcart-rest-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: 'Use your secret API key as the username with an empty password. Base64-encode
+    as {API_KEY}: and pass as Authorization: Basic {encoded}.'
+  sources:
+  - openapi/snipcart-rest-api-openapi.yml
