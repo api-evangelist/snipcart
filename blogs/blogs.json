@@ -10,10 +10,7 @@
     },
     {
       "source": "https://ca.linkedin.com/company/snipcart",
-      "feed_url": "https://ca.linkedin.com/company/snipcart",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "error": "HTTPError"
     },
     {
       "source": "https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/finops/snipcart-finops.yml",
@@ -23,6 +20,6 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-06-27T12:03:07Z",
-  "post_count": 0
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 50
 }
