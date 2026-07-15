@@ -50,6 +50,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/openapi/snipcart-rest-api-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/snipcart-agentic-access.yml
   - type: DomainSecurity
     url: security/snipcart-domain-security.yml
   - type: Authentication
