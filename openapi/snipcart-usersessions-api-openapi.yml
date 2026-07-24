@@ -1,0 +1,82 @@
+openapi: 3.0.3
+info:
+  title: Snipcart REST AbandonedCarts UserSessions API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
+
+    '
+  version: '3.0'
+  contact:
+    name: Snipcart Support
+    url: https://snipcart.com
+  license:
+    name: Proprietary
+    url: https://snipcart.com/terms-of-service
+servers:
+- url: https://app.snipcart.com/api
+  description: Snipcart API
+security:
+- basicAuth: []
+tags:
+- name: UserSessions
+  description: Retrieve user session information
+paths:
+  /usersessions/{token}:
+    get:
+      summary: Get user session
+      operationId: getUserSession
+      description: Returns the session information along with the user details.
+      tags:
+      - UserSessions
+      parameters:
+      - name: token
+        in: path
+        required: true
+        description: Unique user session token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: User session details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSession'
+        '404':
+          description: Session not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    UserSession:
+      type: object
+      properties:
+        token:
+          type: string
+        user:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+            billingAddressFirstName:
+              type: string
+            billingAddressLastName:
+              type: string
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Use your secret API key as the username with an empty password. Base64-encode as {API_KEY}: and pass as Authorization: Basic {encoded}.
+
+        '

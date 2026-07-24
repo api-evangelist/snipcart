@@ -1,0 +1,135 @@
+openapi: 3.0.3
+info:
+  title: Snipcart REST AbandonedCarts Notifications API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
+
+    '
+  version: '3.0'
+  contact:
+    name: Snipcart Support
+    url: https://snipcart.com
+  license:
+    name: Proprietary
+    url: https://snipcart.com/terms-of-service
+servers:
+- url: https://app.snipcart.com/api
+  description: Snipcart API
+security:
+- basicAuth: []
+tags:
+- name: Notifications
+  description: Manage order notifications and emails
+paths:
+  /orders/{token}/notifications:
+    get:
+      summary: List order notifications
+      operationId: listOrderNotifications
+      description: Returns the list of notifications for a specific order.
+      tags:
+      - Notifications
+      parameters:
+      - $ref: '#/components/parameters/orderToken'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      responses:
+        '200':
+          description: List of notifications
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Notification'
+    post:
+      summary: Create order notification
+      operationId: createOrderNotification
+      description: Creates a new notification on an order, optionally sending it via email.
+      tags:
+      - Notifications
+      parameters:
+      - $ref: '#/components/parameters/orderToken'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                  - OrderStatusChanged
+                  - Invoice
+                  - TrackingNumber
+                  - Comment
+                  - Custom
+                deliveryMethod:
+                  type: string
+                  enum:
+                  - Email
+                  - None
+                message:
+                  type: string
+      responses:
+        '200':
+          description: Created notification
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Notification'
+components:
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
+    orderToken:
+      name: token
+      in: path
+      required: true
+      description: Unique order token
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Zero-based offset for pagination
+      schema:
+        type: integer
+        default: 0
+  schemas:
+    Notification:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+          enum:
+          - OrderStatusChanged
+          - Invoice
+          - TrackingNumber
+          - Comment
+          - Custom
+        deliveryMethod:
+          type: string
+          enum:
+          - Email
+          - None
+        message:
+          type: string
+        sentOn:
+          type: string
+          format: date-time
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Use your secret API key as the username with an empty password. Base64-encode as {API_KEY}: and pass as Authorization: Basic {encoded}.
+
+        '

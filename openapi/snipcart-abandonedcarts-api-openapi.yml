@@ -1,0 +1,166 @@
+openapi: 3.0.3
+info:
+  title: Snipcart REST AbandonedCarts API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
+
+    '
+  version: '3.0'
+  contact:
+    name: Snipcart Support
+    url: https://snipcart.com
+  license:
+    name: Proprietary
+    url: https://snipcart.com/terms-of-service
+servers:
+- url: https://app.snipcart.com/api
+  description: Snipcart API
+security:
+- basicAuth: []
+tags:
+- name: AbandonedCarts
+  description: View and track abandoned shopping carts
+paths:
+  /carts/abandoned:
+    get:
+      summary: List abandoned carts
+      operationId: listAbandonedCarts
+      description: Returns all abandoned carts with a paging limit of 25 and default offset of 0.
+      tags:
+      - AbandonedCarts
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - name: continuationToken
+        in: query
+        schema:
+          type: string
+        description: Token for fetching the next page of results
+      - name: from
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: to
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: minimalValue
+        in: query
+        schema:
+          type: number
+          format: float
+        description: Minimum cart value filter
+      - name: email
+        in: query
+        schema:
+          type: string
+          format: email
+      - name: productId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of abandoned carts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AbandonedCart'
+                  continuationToken:
+                    type: string
+  /carts/abandoned/{token}:
+    get:
+      summary: Get abandoned cart
+      operationId: getAbandonedCart
+      description: Retrieves a specific abandoned cart by its unique token.
+      tags:
+      - AbandonedCarts
+      parameters:
+      - name: token
+        in: path
+        required: true
+        description: Unique abandoned cart token
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Abandoned cart details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AbandonedCart'
+        '404':
+          description: Abandoned cart not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
+  schemas:
+    OrderItem:
+      type: object
+      properties:
+        uniqueId:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+          format: float
+        quantity:
+          type: integer
+        url:
+          type: string
+          format: uri
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: string
+    AbandonedCart:
+      type: object
+      properties:
+        token:
+          type: string
+        email:
+          type: string
+          format: email
+        total:
+          type: number
+          format: float
+        currency:
+          type: string
+        creationDate:
+          type: string
+          format: date-time
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderItem'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Use your secret API key as the username with an empty password. Base64-encode as {API_KEY}: and pass as Authorization: Basic {encoded}.
+
+        '

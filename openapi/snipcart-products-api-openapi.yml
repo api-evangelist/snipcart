@@ -1,0 +1,226 @@
+openapi: 3.0.3
+info:
+  title: Snipcart REST AbandonedCarts Products API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
+
+    '
+  version: '3.0'
+  contact:
+    name: Snipcart Support
+    url: https://snipcart.com
+  license:
+    name: Proprietary
+    url: https://snipcart.com/terms-of-service
+servers:
+- url: https://app.snipcart.com/api
+  description: Snipcart API
+security:
+- basicAuth: []
+tags:
+- name: Products
+  description: Manage product catalog and inventory
+paths:
+  /products:
+    get:
+      summary: List products
+      operationId: listProducts
+      description: Returns a list of products with options to filter by date range and sort by sales metrics.
+      tags:
+      - Products
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - name: from
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: to
+        in: query
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: Paginated list of products
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/PaginatedResponse'
+                - type: object
+                  properties:
+                    items:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Product'
+    post:
+      summary: Fetch and create product
+      operationId: fetchProduct
+      description: Fetches the URL passed in parameter and generates products found on the page (HTML buttons or JSON definitions).
+      tags:
+      - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - fetchUrl
+              properties:
+                fetchUrl:
+                  type: string
+                  format: uri
+                  description: URL of page containing product definitions
+      responses:
+        '200':
+          description: Created or updated product
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /products/{id}:
+    get:
+      summary: Get product
+      operationId: getProduct
+      description: Retrieves a product by its identifier (Snipcart-generated or user-defined ID).
+      tags:
+      - Products
+      parameters:
+      - $ref: '#/components/parameters/productId'
+      responses:
+        '200':
+          description: Product details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update product
+      operationId: updateProduct
+      description: Updates specific product attributes, particularly inventory values such as stock levels.
+      tags:
+      - Products
+      parameters:
+      - $ref: '#/components/parameters/productId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                stock:
+                  type: integer
+                allowOutOfStockPurchases:
+                  type: boolean
+      responses:
+        '200':
+          description: Updated product
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+    delete:
+      summary: Archive product
+      operationId: archiveProduct
+      description: Archives the product, removing it from listings. Automatically restored if added to a cart again.
+      tags:
+      - Products
+      parameters:
+      - $ref: '#/components/parameters/productId'
+      responses:
+        '200':
+          description: Product archived successfully
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+        userDefinedId:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+          format: float
+        url:
+          type: string
+          format: uri
+        description:
+          type: string
+        stock:
+          type: integer
+          description: Available stock quantity
+        allowOutOfStockPurchases:
+          type: boolean
+        totalSales:
+          type: integer
+    PaginatedResponse:
+      type: object
+      properties:
+        totalItems:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: string
+  parameters:
+    productId:
+      name: id
+      in: path
+      required: true
+      description: Unique product identifier
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Zero-based offset for pagination
+      schema:
+        type: integer
+        default: 0
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Use your secret API key as the username with an empty password. Base64-encode as {API_KEY}: and pass as Authorization: Basic {encoded}.
+
+        '

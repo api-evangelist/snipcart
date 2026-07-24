@@ -1,0 +1,157 @@
+openapi: 3.0.3
+info:
+  title: Snipcart REST AbandonedCarts Domains API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
+
+    '
+  version: '3.0'
+  contact:
+    name: Snipcart Support
+    url: https://snipcart.com
+  license:
+    name: Proprietary
+    url: https://snipcart.com/terms-of-service
+servers:
+- url: https://app.snipcart.com/api
+  description: Snipcart API
+security:
+- basicAuth: []
+tags:
+- name: Domains
+  description: Manage allowed domains for your store
+paths:
+  /settings/domain:
+    get:
+      summary: Get default domain
+      operationId: getDefaultDomain
+      description: Retrieves your current default domain and its protocol configuration.
+      tags:
+      - Domains
+      responses:
+        '200':
+          description: Default domain
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Domain'
+    put:
+      summary: Update default domain
+      operationId: updateDefaultDomain
+      description: Updates your default domain with optional protocol specification.
+      tags:
+      - Domains
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              properties:
+                name:
+                  type: string
+                protocol:
+                  type: string
+                  enum:
+                  - https
+                  - http
+      responses:
+        '200':
+          description: Updated domain
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Domain'
+  /settings/alloweddomains:
+    get:
+      summary: List allowed domains
+      operationId: listAllowedDomains
+      description: Fetches a complete list of all permitted domains and subdomains (excluding the default domain).
+      tags:
+      - Domains
+      responses:
+        '200':
+          description: List of allowed domains
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Domain'
+    post:
+      summary: Add allowed domains
+      operationId: addAllowedDomains
+      description: Adds new domains or subdomains to your allowed list; returns the updated collection.
+      tags:
+      - Domains
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - domains
+              properties:
+                domains:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Updated list of allowed domains
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Domain'
+    delete:
+      summary: Remove allowed domains
+      operationId: removeAllowedDomains
+      description: Removes specified domains or subdomains from your allowed list; returns remaining domains.
+      tags:
+      - Domains
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - domains
+              properties:
+                domains:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Updated list of allowed domains after removal
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Domain'
+components:
+  schemas:
+    Domain:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Domain name
+        protocol:
+          type: string
+          enum:
+          - https
+          - http
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Use your secret API key as the username with an empty password. Base64-encode as {API_KEY}: and pass as Authorization: Basic {encoded}.
+
+        '

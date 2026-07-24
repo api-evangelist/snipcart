@@ -1,0 +1,140 @@
+openapi: 3.0.3
+info:
+  title: Snipcart REST AbandonedCarts Refunds API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
+
+    '
+  version: '3.0'
+  contact:
+    name: Snipcart Support
+    url: https://snipcart.com
+  license:
+    name: Proprietary
+    url: https://snipcart.com/terms-of-service
+servers:
+- url: https://app.snipcart.com/api
+  description: Snipcart API
+security:
+- basicAuth: []
+tags:
+- name: Refunds
+  description: Manage order refunds
+paths:
+  /orders/{token}/refunds:
+    get:
+      summary: List order refunds
+      operationId: listOrderRefunds
+      description: Returns all refunds for a specific order.
+      tags:
+      - Refunds
+      parameters:
+      - $ref: '#/components/parameters/orderToken'
+      responses:
+        '200':
+          description: List of refunds
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Refund'
+    post:
+      summary: Create refund
+      operationId: createRefund
+      description: Creates a new refund for an order.
+      tags:
+      - Refunds
+      parameters:
+      - $ref: '#/components/parameters/orderToken'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - amount
+              properties:
+                amount:
+                  type: number
+                  format: float
+                  description: Amount to refund
+                comment:
+                  type: string
+                  description: Reason for refund
+      responses:
+        '200':
+          description: Created refund
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Refund'
+  /orders/{token}/refunds/{id}:
+    get:
+      summary: Get refund
+      operationId: getRefund
+      description: Returns a particular refund for a specific order.
+      tags:
+      - Refunds
+      parameters:
+      - $ref: '#/components/parameters/orderToken'
+      - $ref: '#/components/parameters/refundId'
+      responses:
+        '200':
+          description: Refund details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Refund'
+        '404':
+          description: Refund not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: string
+    Refund:
+      type: object
+      properties:
+        id:
+          type: string
+        amount:
+          type: number
+          format: float
+        comment:
+          type: string
+        refundedOn:
+          type: string
+          format: date-time
+  parameters:
+    refundId:
+      name: id
+      in: path
+      required: true
+      description: Unique refund identifier
+      schema:
+        type: string
+    orderToken:
+      name: token
+      in: path
+      required: true
+      description: Unique order token
+      schema:
+        type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Use your secret API key as the username with an empty password. Base64-encode as {API_KEY}: and pass as Authorization: Basic {encoded}.
+
+        '

@@ -1,0 +1,216 @@
+openapi: 3.0.3
+info:
+  title: Snipcart REST AbandonedCarts Discounts API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
+
+    '
+  version: '3.0'
+  contact:
+    name: Snipcart Support
+    url: https://snipcart.com
+  license:
+    name: Proprietary
+    url: https://snipcart.com/terms-of-service
+servers:
+- url: https://app.snipcart.com/api
+  description: Snipcart API
+security:
+- basicAuth: []
+tags:
+- name: Discounts
+  description: Manage discount codes and promotions
+paths:
+  /discounts:
+    get:
+      summary: List discounts
+      operationId: listDiscounts
+      description: Returns all discounts for your account.
+      tags:
+      - Discounts
+      responses:
+        '200':
+          description: List of discounts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Discount'
+    post:
+      summary: Create discount
+      operationId: createDiscount
+      description: Creates a new discount.
+      tags:
+      - Discounts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - type
+              properties:
+                name:
+                  type: string
+                code:
+                  type: string
+                type:
+                  type: string
+                  enum:
+                  - FixedAmount
+                  - Rate
+                  - AlternatePrice
+                  - Shipping
+                amount:
+                  type: number
+                  format: float
+                rate:
+                  type: number
+                  format: float
+                maxNumberOfUsages:
+                  type: integer
+                expirationDate:
+                  type: string
+                  format: date-time
+      responses:
+        '201':
+          description: Created discount
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Discount'
+  /discounts/{id}:
+    get:
+      summary: Get discount
+      operationId: getDiscount
+      description: Returns a particular discount.
+      tags:
+      - Discounts
+      parameters:
+      - $ref: '#/components/parameters/discountId'
+      responses:
+        '200':
+          description: Discount details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Discount'
+        '404':
+          description: Discount not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      summary: Update discount
+      operationId: updateDiscount
+      description: Updates an existing discount.
+      tags:
+      - Discounts
+      parameters:
+      - $ref: '#/components/parameters/discountId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                code:
+                  type: string
+                amount:
+                  type: number
+                  format: float
+                rate:
+                  type: number
+                  format: float
+                maxNumberOfUsages:
+                  type: integer
+                expirationDate:
+                  type: string
+                  format: date-time
+      responses:
+        '200':
+          description: Updated discount
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Discount'
+    delete:
+      summary: Delete discount
+      operationId: deleteDiscount
+      description: Deletes an existing discount. Discounts already used in completed orders cannot be deleted.
+      tags:
+      - Discounts
+      parameters:
+      - $ref: '#/components/parameters/discountId'
+      responses:
+        '200':
+          description: Discount deleted successfully
+        '400':
+          description: Cannot delete discount already used in completed orders
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Discount:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        code:
+          type: string
+          description: Discount code customers enter at checkout
+        type:
+          type: string
+          enum:
+          - FixedAmount
+          - Rate
+          - AlternatePrice
+          - Shipping
+        amount:
+          type: number
+          format: float
+        rate:
+          type: number
+          format: float
+          description: Discount rate as percentage (0-100)
+        maxNumberOfUsages:
+          type: integer
+        numberOfUsages:
+          type: integer
+        expirationDate:
+          type: string
+          format: date-time
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: string
+  parameters:
+    discountId:
+      name: id
+      in: path
+      required: true
+      description: Unique discount identifier
+      schema:
+        type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'Use your secret API key as the username with an empty password. Base64-encode as {API_KEY}: and pass as Authorization: Basic {encoded}.
+
+        '
