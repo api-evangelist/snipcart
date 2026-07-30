@@ -10,7 +10,20 @@ description: >
   on orders, subscriptions, shipping, and taxes. Snipcart is stack-agnostic and integrates
   with static site generators, headless CMSs, and modern JavaScript frameworks.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/snipcart.png
 tags:
   - E-Commerce
   - Shopping Cart
@@ -25,30 +38,132 @@ created: '2026-06-12'
 modified: '2026-06-12'
 specificationVersion: '0.19'
 apis:
-  - aid: snipcart:snipcart-rest-api
-    name: Snipcart REST API
-    description: >
-      The Snipcart REST API provides programmatic access to your store's data including
-      orders, customers, products, discounts, notifications, abandoned carts, domains,
-      refunds, user sessions, and custom shipping methods. It uses HTTP Basic Auth with
-      a secret API key and accepts only application/json content type.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.snipcart.com/v3/api-reference/introduction
-    baseURL: https://app.snipcart.com/api
-    tags:
-      - Orders
-      - Customers
-      - Products
-      - Discounts
-      - Webhooks
-      - E-Commerce
-    properties:
-      - type: Documentation
-        url: https://docs.snipcart.com/v3/api-reference/introduction
-      - type: Authentication
-        url: https://docs.snipcart.com/v3/api-reference/authentication
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/openapi/snipcart-rest-api-openapi.yml
+- aid: snipcart:snipcart-abandonedcarts-api
+  name: Snipcart AbandonedCarts API
+  description: View and track abandoned shopping carts
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - AbandonedCarts
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-abandonedcarts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-customers-api
+  name: Snipcart Customers API
+  description: View and manage customer data
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-customers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-discounts-api
+  name: Snipcart Discounts API
+  description: Manage discount codes and promotions
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - Discounts
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-discounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-domains-api
+  name: Snipcart Domains API
+  description: Manage allowed domains for your store
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - Domains
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-domains-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-notifications-api
+  name: Snipcart Notifications API
+  description: Manage order notifications and emails
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - Notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-notifications-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-orders-api
+  name: Snipcart Orders API
+  description: Manage orders and order lifecycle
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-products-api
+  name: Snipcart Products API
+  description: Manage product catalog and inventory
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-products-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-refunds-api
+  name: Snipcart Refunds API
+  description: Manage order refunds
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - Refunds
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-refunds-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-usersessions-api
+  name: Snipcart UserSessions API
+  description: Retrieve user session information
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - UserSessions
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-usersessions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
 common:
   - type: AgenticAccess
     url: agentic-access/snipcart-agentic-access.yml
