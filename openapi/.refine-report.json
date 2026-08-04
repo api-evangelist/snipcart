@@ -1,0 +1,30 @@
+{
+  "provider": "snipcart",
+  "sources": [
+    "snipcart-abandonedcarts-api-openapi.yml",
+    "snipcart-customers-api-openapi.yml",
+    "snipcart-discounts-api-openapi.yml",
+    "snipcart-domains-api-openapi.yml",
+    "snipcart-notifications-api-openapi.yml",
+    "snipcart-orders-api-openapi.yml",
+    "snipcart-products-api-openapi.yml",
+    "snipcart-refunds-api-openapi.yml",
+    "snipcart-usersessions-api-openapi.yml"
+  ],
+  "outputs": [
+    "snipcart-abandonedcarts-api-openapi.yml",
+    "snipcart-customers-api-openapi.yml",
+    "snipcart-discounts-api-openapi.yml",
+    "snipcart-domains-api-openapi.yml",
+    "snipcart-notifications-api-openapi.yml",
+    "snipcart-orders-api-openapi.yml",
+    "snipcart-products-api-openapi.yml",
+    "snipcart-refunds-api-openapi.yml",
+    "snipcart-usersessions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
