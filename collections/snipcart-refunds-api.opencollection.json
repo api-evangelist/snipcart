@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Snipcart REST AbandonedCarts Refunds API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Refunds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List order refunds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/orders/:token/refunds",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path",
+                "description": "Unique order token"
+              }
+            ]
+          },
+          "docs": "Returns all refunds for a specific order."
+        },
+        {
+          "info": {
+            "name": "Create refund",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.snipcart.com/api/orders/:token/refunds",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path",
+                "description": "Unique order token"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new refund for an order."
+        },
+        {
+          "info": {
+            "name": "Get refund",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/orders/:token/refunds/:id",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path",
+                "description": "Unique order token"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique refund identifier"
+              }
+            ]
+          },
+          "docs": "Returns a particular refund for a specific order."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

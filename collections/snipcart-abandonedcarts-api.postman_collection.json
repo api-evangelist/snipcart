@@ -1,0 +1,344 @@
+{
+  "item": [
+    {
+      "id": "e10dfaec-e335-4856-8cda-643e63420af6",
+      "name": "AbandonedCarts",
+      "description": {
+        "content": "View and track abandoned shopping carts",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "32e41b34-6099-440c-b092-04ebcdc2daa7",
+          "name": "List abandoned carts",
+          "request": {
+            "name": "List abandoned carts",
+            "description": {
+              "content": "Returns all abandoned carts with a paging limit of 25 and default offset of 0.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "carts",
+                "abandoned"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Number of results to return per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "continuationToken",
+                  "value": "<string>",
+                  "description": "Token for fetching the next page of results"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minimalValue",
+                  "value": "<float>",
+                  "description": "Minimum cart value filter"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<email>"
+                },
+                {
+                  "disabled": false,
+                  "key": "productId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3047760-7ccb-4b06-bd8c-e642257e8daf",
+              "name": "List of abandoned carts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "carts",
+                    "abandoned"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "continuationToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "minimalValue",
+                      "value": "<float>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "productId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"token\": \"string\",\n      \"email\": \"E8v@HZGXTlNDaxZBlMhBmf.vz\",\n      \"total\": 9370.573298227428,\n      \"currency\": \"string\",\n      \"creationDate\": \"1999-06-20T10:52:45.710Z\",\n      \"items\": [\n        {\n          \"uniqueId\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"price\": 1226.5915232176517,\n          \"quantity\": 8872,\n          \"url\": \"https://vyy.qjU8-6Ercpe6H\"\n        },\n        {\n          \"uniqueId\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"price\": 8882.742969752242,\n          \"quantity\": 6192,\n          \"url\": \"http://uYPhKdzOWdPlUtWhFoqL.bfeor4mTlgB9GXzI1OIIxh\"\n        }\n      ]\n    },\n    {\n      \"token\": \"string\",\n      \"email\": \"8uOzpPyQ9@UXgKzfSWQmwCexrkewHuMmU.epz\",\n      \"total\": 5358.571667285729,\n      \"currency\": \"string\",\n      \"creationDate\": \"2007-04-26T00:34:54.031Z\",\n      \"items\": [\n        {\n          \"uniqueId\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"price\": 7168.210768334618,\n          \"quantity\": 2833,\n          \"url\": \"http://xobXnaXzIQhhaC.acvBeospK2R4rsWJ9NHmtoZED-rH4KmPQ0Ytiz\"\n        },\n        {\n          \"uniqueId\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"price\": 2334.8761481649094,\n          \"quantity\": 7335,\n          \"url\": \"http://MEdiFNNrpTMIfgotVUdNkagJoyNo.fupwkI6p\"\n        }\n      ]\n    }\n  ],\n  \"continuationToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "056f9488-3bc2-4399-a35c-c60162167c90",
+          "name": "Get abandoned cart",
+          "request": {
+            "name": "Get abandoned cart",
+            "description": {
+              "content": "Retrieves a specific abandoned cart by its unique token.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "carts",
+                "abandoned",
+                ":token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) Unique abandoned cart token"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ee10ff02-9b8a-487f-a89c-f9917ee2b861",
+              "name": "Abandoned cart details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "carts",
+                    "abandoned",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) Unique abandoned cart token"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"string\",\n  \"email\": \"3Dfp2Kt7U1mUnih@TIAUgBMxEcs.dwt\",\n  \"total\": 8713.561299554247,\n  \"currency\": \"string\",\n  \"creationDate\": \"1961-07-10T05:55:10.445Z\",\n  \"items\": [\n    {\n      \"uniqueId\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"price\": 3309.3084280012754,\n      \"quantity\": 843,\n      \"url\": \"https://RpPLpiJBreZqHlnhwbVuQdWMUuRjeES.klc+wS21xVulsBp7rGfv0zal\"\n    },\n    {\n      \"uniqueId\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"price\": 5015.200782508912,\n      \"quantity\": 5693,\n      \"url\": \"https://vlzGvhJspm.cgvHutwrA6PncQZBN2bufkimA-VLpLhbAdeG6d\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d7e7a148-1733-4817-a705-1ccc3bd40675",
+              "name": "Abandoned cart not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "carts",
+                    "abandoned",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) Unique abandoned cart token"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"details\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.snipcart.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7a973147-16dd-4209-99a4-f70865673b8b",
+    "name": "Snipcart REST AbandonedCarts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Snipcart REST API provides programmatic access to your store's data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.\n\n\nContact Support:\n Name: Snipcart Support",
+      "type": "text/plain"
+    }
+  }
+}

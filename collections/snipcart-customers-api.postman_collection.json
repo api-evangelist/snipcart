@@ -1,0 +1,449 @@
+{
+  "item": [
+    {
+      "id": "19efbaea-1491-4d84-bf67-7bb01c9c0522",
+      "name": "Customers",
+      "description": {
+        "content": "View and manage customer data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "04bd26a1-76af-4733-948d-f2e9042b0d33",
+          "name": "List customers",
+          "request": {
+            "name": "List customers",
+            "description": {
+              "content": "Returns the list of all your existing customers with optional filtering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Number of results to return per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Zero-based offset for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<email>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f2851dc-d716-4cd7-8ba2-411b3f0764a9",
+              "name": "Paginated list of customers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalItems\": 418,\n  \"offset\": 5679,\n  \"limit\": 409,\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"email\": \"tW8QL3W@ng.kiw\",\n      \"billingAddressFirstName\": \"string\",\n      \"billingAddressLastName\": \"string\",\n      \"ordersCount\": 9480,\n      \"totalSpent\": 4176.9848565270895,\n      \"status\": \"Confirmed\",\n      \"creationDate\": \"1985-08-09T14:20:54.036Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"email\": \"Zj3ZHnBbaww@oMOiNvACMrnWieRMUCiXSOquSVrZRcq.raps\",\n      \"billingAddressFirstName\": \"string\",\n      \"billingAddressLastName\": \"string\",\n      \"ordersCount\": 7709,\n      \"totalSpent\": 5867.3644230683885,\n      \"status\": \"Confirmed\",\n      \"creationDate\": \"1964-01-06T00:08:36.634Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f6bd097-4542-4cb3-a244-5c85c4dee6c0",
+          "name": "Get customer",
+          "request": {
+            "name": "Get customer",
+            "description": {
+              "content": "Retrieves information about a specific customer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique customer identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75421783-0dba-45e5-a1b7-0c962e719255",
+              "name": "Customer details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique customer identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"email\": \"GdT@SBHftMMMl.tqd\",\n  \"billingAddressFirstName\": \"string\",\n  \"billingAddressLastName\": \"string\",\n  \"ordersCount\": 4077,\n  \"totalSpent\": 7111.210766484146,\n  \"status\": \"Unconfirmed\",\n  \"creationDate\": \"1958-05-23T03:13:34.826Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aac51939-8200-4ef0-8770-2c6fa6176b59",
+              "name": "Customer not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique customer identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"details\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "845193fc-579b-4e9f-ad54-cffc0797aefd",
+          "name": "List customer orders",
+          "request": {
+            "name": "List customer orders",
+            "description": {
+              "content": "Returns a list of orders associated with a particular customer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "customers",
+                ":id",
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Number of results to return per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Zero-based offset for pagination"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Unique customer identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "25f67c22-663c-4b0d-944c-b5f348773d07",
+              "name": "List of customer orders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customers",
+                    ":id",
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Unique customer identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"token\": \"string\",\n    \"status\": \"Pending\",\n    \"paymentStatus\": \"Deferred\",\n    \"email\": \"0QSibntbIH@ToUHwHJfzXZuwiupmD.dl\",\n    \"total\": 2968.8931314732426,\n    \"currency\": \"string\",\n    \"completionDate\": \"1946-11-23T13:34:43.799Z\",\n    \"trackingNumber\": \"string\",\n    \"trackingUrl\": \"http://hLMVaSk.mvcPUBbJs79tuofBnPXr2RNbCFtHU5p0KWnVdcQ8fDTCjURLjbmhw4rQRlkkN62qf58\",\n    \"items\": [\n      {\n        \"uniqueId\": \"string\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"price\": 8243.094805941177,\n        \"quantity\": 3296,\n        \"url\": \"https://rAPFtFlYXrWsMePxdcRhXUNiz.isg83cqUe7wtO4Hx+GvzkPfA\"\n      },\n      {\n        \"uniqueId\": \"string\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"price\": 1650.156789484789,\n        \"quantity\": 1972,\n        \"url\": \"http://GoyKAVXWOzOujFkELMRhFsnkUmXTEfoJ.fekgp2knak6Ed6xnKhzM1rPA,5yYleFiPEnFvt1RxdrbinnSHsFhdi6zZoEJefr4RMKp0Ss4KHg,bMU1n0w2IuCm\"\n      }\n    ]\n  },\n  {\n    \"token\": \"string\",\n    \"status\": \"Disputed\",\n    \"paymentStatus\": \"Cancelled\",\n    \"email\": \"sFR@VZjsEXQWpGleiVsSkVngoLhJWaMBvOr.au\",\n    \"total\": 7701.385773103675,\n    \"currency\": \"string\",\n    \"completionDate\": \"1993-03-16T13:36:38.007Z\",\n    \"trackingNumber\": \"string\",\n    \"trackingUrl\": \"http://FHKrxbDaqUKceBgenJEXZmAQiZVwZnP.soIthUl2MA.u.cp7MmuV0Lw7rivyf+hOQ70a+2KHlCiu\",\n    \"items\": [\n      {\n        \"uniqueId\": \"string\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"price\": 3988.9742123357055,\n        \"quantity\": 8877,\n        \"url\": \"https://wVww.lxwIfr4EH.v-mnyI4dYS9Q0kRoRIG3Bkt4jgTfcG8JDnxaQd90TlxXNS5ITPa5XfhHmcYUv\"\n      },\n      {\n        \"uniqueId\": \"string\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"price\": 6827.370862799525,\n        \"quantity\": 5630,\n        \"url\": \"http://Gl.tvO2KeKyUlTjyfRc8b01-ZstyxulHyZ12KA0UEeq\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.snipcart.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a85a805a-a8c5-479d-91f7-ff738ca4fae5",
+    "name": "Snipcart REST AbandonedCarts Customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Snipcart REST API provides programmatic access to your store's data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.\n\n\nContact Support:\n Name: Snipcart Support",
+      "type": "text/plain"
+    }
+  }
+}

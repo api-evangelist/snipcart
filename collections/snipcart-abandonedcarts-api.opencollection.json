@@ -1,0 +1,95 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Snipcart REST AbandonedCarts API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AbandonedCarts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List abandoned carts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/carts/abandoned",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page"
+              },
+              {
+                "name": "continuationToken",
+                "value": "",
+                "type": "query",
+                "description": "Token for fetching the next page of results"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minimalValue",
+                "value": "",
+                "type": "query",
+                "description": "Minimum cart value filter"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "productId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns all abandoned carts with a paging limit of 25 and default offset of 0."
+        },
+        {
+          "info": {
+            "name": "Get abandoned cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/carts/abandoned/:token",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path",
+                "description": "Unique abandoned cart token"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific abandoned cart by its unique token."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

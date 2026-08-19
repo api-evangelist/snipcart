@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Snipcart REST AbandonedCarts UserSessions API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UserSessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get user session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/usersessions/:token",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path",
+                "description": "Unique user session token"
+              }
+            ]
+          },
+          "docs": "Returns the session information along with the user details."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

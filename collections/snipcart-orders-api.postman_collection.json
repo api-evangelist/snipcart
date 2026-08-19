@@ -1,0 +1,661 @@
+{
+  "item": [
+    {
+      "id": "cc8e5999-1ddc-400c-aa70-eb0840da271e",
+      "name": "Orders",
+      "description": {
+        "content": "Manage orders and order lifecycle",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d057bf9f-9ead-42f1-88bf-9a09566cc310",
+          "name": "List all orders",
+          "request": {
+            "name": "List all orders",
+            "description": {
+              "content": "Retrieve all completed orders with optional filtering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Number of results to return per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Zero-based offset for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<dateTime>",
+                  "description": "Filter orders created on or after this date"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<dateTime>",
+                  "description": "Filter orders created on or before this date"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0ea9c24-3d83-45d6-9420-6cf1f98f7d35",
+              "name": "Paginated list of orders",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalItems\": 2926,\n  \"offset\": 7319,\n  \"limit\": 472,\n  \"items\": [\n    {\n      \"token\": \"string\",\n      \"status\": \"Processed\",\n      \"paymentStatus\": \"Failed\",\n      \"email\": \"ZwNyPHok5o@wGOIOXpiQChebWiNIiVkcdtKpI.mrj\",\n      \"total\": 909.6667190790597,\n      \"currency\": \"string\",\n      \"completionDate\": \"1962-10-19T12:10:45.195Z\",\n      \"trackingNumber\": \"string\",\n      \"trackingUrl\": \"https://BsxFANKEHDTcziyisQ.touR4HFOTCtXsiJOQS-pnyBXO2mhV\",\n      \"items\": [\n        {\n          \"uniqueId\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"price\": 9961.781864981607,\n          \"quantity\": 5097,\n          \"url\": \"http://NPiifGkgoJAiKLjGKfSKK.abwrDkslVK,aSefLAf.eyByYmcZ\"\n        },\n        {\n          \"uniqueId\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"price\": 7956.893519155339,\n          \"quantity\": 1736,\n          \"url\": \"https://OTNTlXhvlWIJNQJncMhORJEMVHAPi.elkfwuybCZainyg.IidUoZBzHqiUM2UPfJ2xo6N4eWUrOkW+eom5UdRDikWXBTjybVQH1n\"\n        }\n      ]\n    },\n    {\n      \"token\": \"string\",\n      \"status\": \"Cancelled\",\n      \"paymentStatus\": \"Failed\",\n      \"email\": \"kdALl3Acdl6@cxQvIuzZ.lskh\",\n      \"total\": 5412.280724873587,\n      \"currency\": \"string\",\n      \"completionDate\": \"2005-11-11T02:29:16.307Z\",\n      \"trackingNumber\": \"string\",\n      \"trackingUrl\": \"http://DAIFrOsmymdURfwOVdIgRjyTSIViFu.tneS9I+dJoS62W8GQcJKdksQD1gDHGnfCqcIZVJflw1ldc1TEa2bcSGv7i4uB5Wilrgf93SyH\",\n      \"items\": [\n        {\n          \"uniqueId\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"price\": 6526.111409950375,\n          \"quantity\": 4619,\n          \"url\": \"http://albmIQjEXZfQYmxSbuqvTHZh.dnski7fVsjNElsMH-V9V,Q6OqwETdK7vEP.LjNFzZ5aNfm17cdIby3XIHZ7jkwygZltOQP2TEI\"\n        },\n        {\n          \"uniqueId\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"price\": 9204.534486928489,\n          \"quantity\": 2620,\n          \"url\": \"http://RZqJOLvlAtCZmyPNkrkQ.sdelhgzKP0hMTbLZ1kPL1sIr+8rUGIVpj0dTeDnl4AF8rQe.vhlRoL7FiCcwOU\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f699ce9e-2574-45eb-a6da-5a590add666b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"details\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d7e07ad6-41d4-4871-adaa-a3d588099420",
+          "name": "Get order",
+          "request": {
+            "name": "Get order",
+            "description": {
+              "content": "Retrieve a single order including all items, promo codes, and applied taxes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) Unique order token"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f744c8b-a3e3-4bf8-bcd5-94c85e7bd0ec",
+              "name": "Order details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) Unique order token"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"string\",\n  \"status\": \"Shipped\",\n  \"paymentStatus\": \"PaidDeferred\",\n  \"email\": \"FQDx6O@wYIdIUiOtICLknE.wklt\",\n  \"total\": 4132.547244608059,\n  \"currency\": \"string\",\n  \"completionDate\": \"2001-06-18T04:31:19.649Z\",\n  \"trackingNumber\": \"string\",\n  \"trackingUrl\": \"https://YLCbDheZLuvOogZ.nwjfIVf4NuFHPnJ4poaTGPTL\",\n  \"items\": [\n    {\n      \"uniqueId\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"price\": 1958.4993840418974,\n      \"quantity\": 5134,\n      \"url\": \"http://cmZgfXqjfyoGV.gaCthvtKs8LHnodFTakGgCYXLuWiR+4lCDiJ5bHuSIsNVrutrskh4+GxLe\"\n    },\n    {\n      \"uniqueId\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"price\": 1116.9276896697588,\n      \"quantity\": 2782,\n      \"url\": \"https://XSDMvtyeIUvYbA.zpRnEM0db0V+QqQf2Cutu9z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "313c9a48-e3df-406b-ac68-573a1ee55c50",
+              "name": "Order not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) Unique order token"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"details\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8b0e470-fad2-4b0b-865f-97e685e7d88d",
+          "name": "Update order",
+          "request": {
+            "name": "Update order",
+            "description": {
+              "content": "Update the status, payment status, tracking information, or metadata of a specific order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) Unique order token"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<string>\",\n  \"paymentStatus\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"trackingUrl\": \"<uri>\",\n  \"metadata\": {\n    \"key_0\": 1492.612406225168\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d98c8e09-1065-4e77-838d-e44398da5d3f",
+              "name": "Updated order",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) Unique order token"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\",\n  \"paymentStatus\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"trackingUrl\": \"<uri>\",\n  \"metadata\": {\n    \"key_0\": 4418.399301008509,\n    \"key_1\": 6109.393998826807\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"token\": \"string\",\n  \"status\": \"Shipped\",\n  \"paymentStatus\": \"PaidDeferred\",\n  \"email\": \"FQDx6O@wYIdIUiOtICLknE.wklt\",\n  \"total\": 4132.547244608059,\n  \"currency\": \"string\",\n  \"completionDate\": \"2001-06-18T04:31:19.649Z\",\n  \"trackingNumber\": \"string\",\n  \"trackingUrl\": \"https://YLCbDheZLuvOogZ.nwjfIVf4NuFHPnJ4poaTGPTL\",\n  \"items\": [\n    {\n      \"uniqueId\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"price\": 1958.4993840418974,\n      \"quantity\": 5134,\n      \"url\": \"http://cmZgfXqjfyoGV.gaCthvtKs8LHnodFTakGgCYXLuWiR+4lCDiJ5bHuSIsNVrutrskh4+GxLe\"\n    },\n    {\n      \"uniqueId\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"price\": 1116.9276896697588,\n      \"quantity\": 2782,\n      \"url\": \"https://XSDMvtyeIUvYbA.zpRnEM0db0V+QqQf2Cutu9z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fab0a3b5-875d-4639-b00f-8113ad106319",
+              "name": "Order not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) Unique order token"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<string>\",\n  \"paymentStatus\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"trackingUrl\": \"<uri>\",\n  \"metadata\": {\n    \"key_0\": 4418.399301008509,\n    \"key_1\": 6109.393998826807\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"string\",\n  \"details\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2208ef85-28f1-477f-a561-b7ab1a184498",
+          "name": "Get digital goods for order",
+          "request": {
+            "name": "Get digital goods for order",
+            "description": {
+              "content": "Return the list of digital goods attached to an order with download details and validity status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orders",
+                ":token",
+                "digital"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) Unique order token"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "552488d5-76f1-43b3-80a7-bb46a81303ae",
+              "name": "List of digital goods",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orders",
+                    ":token",
+                    "digital"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) Unique order token"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"fileName\": \"string\",\n    \"url\": \"https://Es.ncqyP2hBboAN+-P,k\",\n    \"expirationDate\": \"2016-12-20T06:15:16.622Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"fileName\": \"string\",\n    \"url\": \"http://uXMxdunjSxe.gpHhjCcqZlM6Bkr9w.zhXAVw\",\n    \"expirationDate\": \"2000-05-02T13:58:59.316Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.snipcart.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "067468b3-b325-40d8-afa5-7f86f383a26c",
+    "name": "Snipcart REST AbandonedCarts Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Snipcart REST API provides programmatic access to your store's data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.\n\n\nContact Support:\n Name: Snipcart Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Snipcart REST AbandonedCarts Domains API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Domains",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get default domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/settings/domain"
+          },
+          "docs": "Retrieves your current default domain and its protocol configuration."
+        },
+        {
+          "info": {
+            "name": "Update default domain",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.snipcart.com/api/settings/domain",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates your default domain with optional protocol specification."
+        },
+        {
+          "info": {
+            "name": "List allowed domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/settings/alloweddomains"
+          },
+          "docs": "Fetches a complete list of all permitted domains and subdomains (excluding the default domain)."
+        },
+        {
+          "info": {
+            "name": "Add allowed domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.snipcart.com/api/settings/alloweddomains",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds new domains or subdomains to your allowed list; returns the updated collection."
+        },
+        {
+          "info": {
+            "name": "Remove allowed domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.snipcart.com/api/settings/alloweddomains",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Removes specified domains or subdomains from your allowed list; returns remaining domains."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

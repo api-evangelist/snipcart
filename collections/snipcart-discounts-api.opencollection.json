@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Snipcart REST AbandonedCarts Discounts API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List discounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/discounts"
+          },
+          "docs": "Returns all discounts for your account."
+        },
+        {
+          "info": {
+            "name": "Create discount",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.snipcart.com/api/discounts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new discount."
+        },
+        {
+          "info": {
+            "name": "Get discount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.snipcart.com/api/discounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique discount identifier"
+              }
+            ]
+          },
+          "docs": "Returns a particular discount."
+        },
+        {
+          "info": {
+            "name": "Update discount",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.snipcart.com/api/discounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique discount identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing discount."
+        },
+        {
+          "info": {
+            "name": "Delete discount",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.snipcart.com/api/discounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique discount identifier"
+              }
+            ]
+          },
+          "docs": "Deletes an existing discount. Discounts already used in completed orders cannot be deleted."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
