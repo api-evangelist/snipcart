@@ -27,6 +27,15 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/snipcart.p
 tags:
   - E-Commerce
   - Shopping Cart
+  - Order
+  - Product
+  - Payments
+  - Webhook
+  - Headless Commerce
+  - JAMstack
+tags_raw:
+  - E-Commerce
+  - Shopping Cart
   - Orders
   - Products
   - Payments
@@ -44,6 +53,8 @@ apis:
   humanURL: https://docs.snipcart.com/v3/api-reference/introduction
   baseURL: https://app.snipcart.com/api
   tags:
+  - Abandoned Carts
+  tags_raw:
   - AbandonedCarts
   properties:
   - type: OpenAPI
@@ -100,6 +111,8 @@ apis:
   humanURL: https://docs.snipcart.com/v3/api-reference/introduction
   baseURL: https://app.snipcart.com/api
   tags:
+  - Notification
+  tags_raw:
   - Notifications
   properties:
   - type: OpenAPI
@@ -114,6 +127,8 @@ apis:
   humanURL: https://docs.snipcart.com/v3/api-reference/introduction
   baseURL: https://app.snipcart.com/api
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
@@ -128,6 +143,8 @@ apis:
   humanURL: https://docs.snipcart.com/v3/api-reference/introduction
   baseURL: https://app.snipcart.com/api
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -156,6 +173,8 @@ apis:
   humanURL: https://docs.snipcart.com/v3/api-reference/introduction
   baseURL: https://app.snipcart.com/api
   tags:
+  - User Sessions
+  tags_raw:
   - UserSessions
   properties:
   - type: OpenAPI
