@@ -13,18 +13,16 @@
       "feed_url": "https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/finops/snipcart-finops.yml",
       "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "parse_failed"
+      "method": "none"
     },
     {
       "source": "https://ca.linkedin.com/company/snipcart",
       "feed_url": "https://ca.linkedin.com/company/snipcart",
       "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "fetch_failed: HTTPError"
+      "method": "none"
     }
   ],
-  "fetched": "2026-08-15T12:11:08Z",
+  "fetched": "2026-08-22T20:20:02Z",
   "post_count": 50
 }
