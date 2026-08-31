@@ -44,7 +44,7 @@ tags:
   - Payments
   - Webhook
   - Headless Commerce
-  - JAMstack
+  - Jamstack
 tags_raw:
   - E-Commerce
   - Shopping Cart
@@ -65,7 +65,7 @@ apis:
   humanURL: https://docs.snipcart.com/v3/api-reference/introduction
   baseURL: https://app.snipcart.com/api
   tags:
-  - Abandoned Carts
+  - AbandonedCarts
   tags_raw:
   - AbandonedCarts
   properties:
@@ -185,7 +185,7 @@ apis:
   humanURL: https://docs.snipcart.com/v3/api-reference/introduction
   baseURL: https://app.snipcart.com/api
   tags:
-  - User Sessions
+  - UserSessions
   tags_raw:
   - UserSessions
   properties:
