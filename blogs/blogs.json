@@ -2,13 +2,11 @@
   "repo": "snipcart",
   "feeds": [
     {
-      "source": "https://snipcart.com/blog/rss",
-      "feed_url": "https://snipcart.com/blog/rss",
+      "source": "https://ca.linkedin.com/company/snipcart",
+      "feed_url": "https://ca.linkedin.com/company/snipcart",
       "title": "",
       "saved": 0,
-      "method": "feed",
-      "nature": "vendor-blog",
-      "nature_basis": "path_blog"
+      "method": "none"
     },
     {
       "source": "https://raw.githubusercontent.com/api-evangelist/snipcart/refs/heads/main/finops/snipcart-finops.yml",
@@ -18,14 +16,14 @@
       "method": "none"
     },
     {
-      "source": "https://ca.linkedin.com/company/snipcart",
-      "feed_url": "https://ca.linkedin.com/company/snipcart",
+      "source": "https://snipcart.com/blog/rss",
+      "feed_url": "https://snipcart.com/blog/rss",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "feed"
     }
   ],
-  "fetched": "2026-08-30T22:33:40Z",
+  "fetched": "2026-09-06T19:17:18Z",
   "post_count": 50,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
