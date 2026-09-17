@@ -60,22 +60,6 @@ created: '2026-06-12'
 modified: '2026-06-12'
 specificationVersion: '0.23'
 apis:
-- aid: snipcart:snipcart-abandonedcarts-api
-  name: Snipcart AbandonedCarts API
-  description: View and track abandoned shopping carts
-  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
-  baseURL: https://app.snipcart.com/api
-  tags:
-  - Abandoned Carts
-  tags_raw:
-  - AbandonedCarts
-  properties:
-  - type: OpenAPI
-    url: openapi/snipcart-abandonedcarts-api-openapi.yml
-  - type: Documentation
-    url: https://docs.snipcart.com/v3/api-reference/introduction
-  - type: Authentication
-    url: https://docs.snipcart.com/v3/api-reference/authentication
 - aid: snipcart:snipcart-customers-api
   name: Snipcart Customers API
   description: View and manage customer data
@@ -180,18 +164,30 @@ apis:
     url: https://docs.snipcart.com/v3/api-reference/introduction
   - type: Authentication
     url: https://docs.snipcart.com/v3/api-reference/authentication
-- aid: snipcart:snipcart-usersessions-api
-  name: Snipcart UserSessions API
+- aid: snipcart:snipcart-abandoned-carts-api
+  name: Snipcart Abandoned Carts API
+  description: View and track abandoned shopping carts
+  humanURL: https://docs.snipcart.com/v3/api-reference/introduction
+  baseURL: https://app.snipcart.com/api
+  tags:
+  - Abandoned Carts
+  properties:
+  - type: OpenAPI
+    url: openapi/snipcart-abandoned-carts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.snipcart.com/v3/api-reference/introduction
+  - type: Authentication
+    url: https://docs.snipcart.com/v3/api-reference/authentication
+- aid: snipcart:snipcart-user-sessions-api
+  name: Snipcart User Sessions API
   description: Retrieve user session information
   humanURL: https://docs.snipcart.com/v3/api-reference/introduction
   baseURL: https://app.snipcart.com/api
   tags:
   - User Sessions
-  tags_raw:
-  - UserSessions
   properties:
   - type: OpenAPI
-    url: openapi/snipcart-usersessions-api-openapi.yml
+    url: openapi/snipcart-user-sessions-api-openapi.yml
   - type: Documentation
     url: https://docs.snipcart.com/v3/api-reference/introduction
   - type: Authentication
