@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Snipcart REST AbandonedCarts Orders API
-  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
-
-    '
+  title: Snipcart REST Orders API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.'
   version: '3.0'
   contact:
     name: Snipcart Support
@@ -184,6 +182,19 @@ paths:
                       format: date-time
 components:
   schemas:
+    PaginatedResponse:
+      type: object
+      properties:
+        totalItems:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
     OrderItem:
       type: object
       properties:
@@ -258,19 +269,6 @@ components:
           description: Items in the order
           items:
             $ref: '#/components/schemas/OrderItem'
-    PaginatedResponse:
-      type: object
-      properties:
-        totalItems:
-          type: integer
-        offset:
-          type: integer
-        limit:
-          type: integer
-        items:
-          type: array
-          items:
-            type: object
     Error:
       type: object
       properties:
@@ -281,21 +279,6 @@ components:
           items:
             type: string
   parameters:
-    orderToken:
-      name: token
-      in: path
-      required: true
-      description: Unique order token
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Number of results to return per page
-      schema:
-        type: integer
-        default: 25
     offset:
       name: offset
       in: query
@@ -304,6 +287,21 @@ components:
       schema:
         type: integer
         default: 0
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
+    orderToken:
+      name: token
+      in: path
+      required: true
+      description: Unique order token
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http

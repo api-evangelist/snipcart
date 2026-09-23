@@ -1,9 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Snipcart REST AbandonedCarts Products API
-  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.
-
-    '
+  title: Snipcart REST Products API
+  description: 'The Snipcart REST API provides programmatic access to your store''s data including orders, customers, products, discounts, notifications, abandoned carts, domains, refunds, user sessions, and custom shipping methods. Authentication uses HTTP Basic Auth with a secret API key generated from the merchant dashboard. All requests must include an Accept: application/json header.'
   version: '3.0'
   contact:
     name: Snipcart Support
@@ -201,14 +199,6 @@ components:
       description: Unique product identifier
       schema:
         type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Number of results to return per page
-      schema:
-        type: integer
-        default: 25
     offset:
       name: offset
       in: query
@@ -217,6 +207,14 @@ components:
       schema:
         type: integer
         default: 0
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
   securitySchemes:
     basicAuth:
       type: http

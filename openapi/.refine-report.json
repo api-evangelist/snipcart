@@ -1,15 +1,7 @@
 {
   "provider": "snipcart",
   "sources": [
-    "snipcart-abandonedcarts-api-openapi.yml",
-    "snipcart-customers-api-openapi.yml",
-    "snipcart-discounts-api-openapi.yml",
-    "snipcart-domains-api-openapi.yml",
-    "snipcart-notifications-api-openapi.yml",
-    "snipcart-orders-api-openapi.yml",
-    "snipcart-products-api-openapi.yml",
-    "snipcart-refunds-api-openapi.yml",
-    "snipcart-usersessions-api-openapi.yml"
+    "_original/snipcart-rest-api-openapi.yml"
   ],
   "outputs": [
     "snipcart-abandonedcarts-api-openapi.yml",
@@ -22,9 +14,26 @@
     "snipcart-refunds-api-openapi.yml",
     "snipcart-usersessions-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "snipcart-rest-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "superseded outputs removed: snipcart-abandoned-carts-api-openapi.yml, snipcart-user-sessions-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 9 total)"
+  ],
+  "skipped": [
+    "snipcart-abandoned-carts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "snipcart-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "snipcart-discounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "snipcart-domains-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "snipcart-notifications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "snipcart-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "snipcart-products-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "snipcart-refunds-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "snipcart-user-sessions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
