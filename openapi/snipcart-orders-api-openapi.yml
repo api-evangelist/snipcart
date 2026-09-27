@@ -181,6 +181,30 @@ paths:
                       type: string
                       format: date-time
 components:
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
+    orderToken:
+      name: token
+      in: path
+      required: true
+      description: Unique order token
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Zero-based offset for pagination
+      schema:
+        type: integer
+        default: 0
   schemas:
     PaginatedResponse:
       type: object
@@ -278,30 +302,6 @@ components:
           type: array
           items:
             type: string
-  parameters:
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Zero-based offset for pagination
-      schema:
-        type: integer
-        default: 0
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Number of results to return per page
-      schema:
-        type: integer
-        default: 25
-    orderToken:
-      name: token
-      in: path
-      required: true
-      description: Unique order token
-      schema:
-        type: string
   securitySchemes:
     basicAuth:
       type: http

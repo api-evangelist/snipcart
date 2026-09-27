@@ -91,21 +91,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 components:
-  parameters:
-    orderToken:
-      name: token
-      in: path
-      required: true
-      description: Unique order token
-      schema:
-        type: string
-    refundId:
-      name: id
-      in: path
-      required: true
-      description: Unique refund identifier
-      schema:
-        type: string
   schemas:
     Error:
       type: object
@@ -129,6 +114,21 @@ components:
         refundedOn:
           type: string
           format: date-time
+  parameters:
+    orderToken:
+      name: token
+      in: path
+      required: true
+      description: Unique order token
+      schema:
+        type: string
+    refundId:
+      name: id
+      in: path
+      required: true
+      description: Unique refund identifier
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http

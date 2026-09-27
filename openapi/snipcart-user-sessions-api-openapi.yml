@@ -47,6 +47,15 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: string
     UserSession:
       type: object
       properties:
@@ -62,15 +71,6 @@ components:
               type: string
             billingAddressLastName:
               type: string
-    Error:
-      type: object
-      properties:
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: string
   securitySchemes:
     basicAuth:
       type: http

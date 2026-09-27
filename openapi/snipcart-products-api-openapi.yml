@@ -192,21 +192,6 @@ components:
           items:
             type: string
   parameters:
-    productId:
-      name: id
-      in: path
-      required: true
-      description: Unique product identifier
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Zero-based offset for pagination
-      schema:
-        type: integer
-        default: 0
     limit:
       name: limit
       in: query
@@ -215,6 +200,21 @@ components:
       schema:
         type: integer
         default: 25
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Zero-based offset for pagination
+      schema:
+        type: integer
+        default: 0
+    productId:
+      name: id
+      in: path
+      required: true
+      description: Unique product identifier
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http
