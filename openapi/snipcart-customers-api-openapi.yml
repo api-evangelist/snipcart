@@ -107,30 +107,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/Order'
 components:
-  parameters:
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Number of results to return per page
-      schema:
-        type: integer
-        default: 25
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Zero-based offset for pagination
-      schema:
-        type: integer
-        default: 0
-    customerId:
-      name: id
-      in: path
-      required: true
-      description: Unique customer identifier
-      schema:
-        type: string
   schemas:
     PaginatedResponse:
       type: object
@@ -145,6 +121,34 @@ components:
           type: array
           items:
             type: object
+    Customer:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique customer identifier
+        email:
+          type: string
+          format: email
+        billingAddressFirstName:
+          type: string
+        billingAddressLastName:
+          type: string
+        ordersCount:
+          type: integer
+          description: Number of orders placed by customer
+        totalSpent:
+          type: number
+          format: float
+          description: Total amount spent by customer
+        status:
+          type: string
+          enum:
+          - Confirmed
+          - Unconfirmed
+        creationDate:
+          type: string
+          format: date-time
     OrderItem:
       type: object
       properties:
@@ -219,34 +223,6 @@ components:
           description: Items in the order
           items:
             $ref: '#/components/schemas/OrderItem'
-    Customer:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique customer identifier
-        email:
-          type: string
-          format: email
-        billingAddressFirstName:
-          type: string
-        billingAddressLastName:
-          type: string
-        ordersCount:
-          type: integer
-          description: Number of orders placed by customer
-        totalSpent:
-          type: number
-          format: float
-          description: Total amount spent by customer
-        status:
-          type: string
-          enum:
-          - Confirmed
-          - Unconfirmed
-        creationDate:
-          type: string
-          format: date-time
     Error:
       type: object
       properties:
@@ -256,6 +232,30 @@ components:
           type: array
           items:
             type: string
+  parameters:
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Zero-based offset for pagination
+      schema:
+        type: integer
+        default: 0
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
+    customerId:
+      name: id
+      in: path
+      required: true
+      description: Unique customer identifier
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http

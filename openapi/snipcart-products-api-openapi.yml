@@ -145,6 +145,19 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    PaginatedResponse:
+      type: object
+      properties:
+        totalItems:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
     Product:
       type: object
       properties:
@@ -169,19 +182,6 @@ components:
           type: boolean
         totalSales:
           type: integer
-    PaginatedResponse:
-      type: object
-      properties:
-        totalItems:
-          type: integer
-        offset:
-          type: integer
-        limit:
-          type: integer
-        items:
-          type: array
-          items:
-            type: object
     Error:
       type: object
       properties:
@@ -192,14 +192,6 @@ components:
           items:
             type: string
   parameters:
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Number of results to return per page
-      schema:
-        type: integer
-        default: 25
     offset:
       name: offset
       in: query
@@ -215,6 +207,14 @@ components:
       description: Unique product identifier
       schema:
         type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
   securitySchemes:
     basicAuth:
       type: http

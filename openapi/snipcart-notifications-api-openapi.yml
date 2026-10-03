@@ -76,6 +76,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Notification'
 components:
+  parameters:
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Zero-based offset for pagination
+      schema:
+        type: integer
+        default: 0
+    orderToken:
+      name: token
+      in: path
+      required: true
+      description: Unique order token
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
   schemas:
     Notification:
       type: object
@@ -100,30 +124,6 @@ components:
         sentOn:
           type: string
           format: date-time
-  parameters:
-    orderToken:
-      name: token
-      in: path
-      required: true
-      description: Unique order token
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Number of results to return per page
-      schema:
-        type: integer
-        default: 25
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Zero-based offset for pagination
-      schema:
-        type: integer
-        default: 0
   securitySchemes:
     basicAuth:
       type: http
