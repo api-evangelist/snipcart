@@ -193,6 +193,9 @@ apis:
   - type: Authentication
     url: https://docs.snipcart.com/v3/api-reference/authentication
 common:
+  - type: CapabilityMap
+    url: capabilities/snipcart-capability-edges.yml
+    name: Snipcart Business Capability Map
   - type: AgenticAccess
     url: agentic-access/snipcart-agentic-access.yml
   - type: DomainSecurity
