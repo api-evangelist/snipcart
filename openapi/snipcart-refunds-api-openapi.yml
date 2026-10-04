@@ -92,6 +92,15 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            type: string
     Refund:
       type: object
       properties:
@@ -105,28 +114,19 @@ components:
         refundedOn:
           type: string
           format: date-time
-    Error:
-      type: object
-      properties:
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: string
   parameters:
-    refundId:
-      name: id
-      in: path
-      required: true
-      description: Unique refund identifier
-      schema:
-        type: string
     orderToken:
       name: token
       in: path
       required: true
       description: Unique order token
+      schema:
+        type: string
+    refundId:
+      name: id
+      in: path
+      required: true
+      description: Unique refund identifier
       schema:
         type: string
   securitySchemes:

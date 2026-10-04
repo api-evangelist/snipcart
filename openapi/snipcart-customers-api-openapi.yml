@@ -107,20 +107,40 @@ paths:
                 items:
                   $ref: '#/components/schemas/Order'
 components:
+  parameters:
+    customerId:
+      name: id
+      in: path
+      required: true
+      description: Unique customer identifier
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Number of results to return per page
+      schema:
+        type: integer
+        default: 25
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Zero-based offset for pagination
+      schema:
+        type: integer
+        default: 0
   schemas:
-    PaginatedResponse:
+    Error:
       type: object
       properties:
-        totalItems:
-          type: integer
-        offset:
-          type: integer
-        limit:
-          type: integer
-        items:
+        message:
+          type: string
+        details:
           type: array
           items:
-            type: object
+            type: string
     Customer:
       type: object
       properties:
@@ -166,6 +186,19 @@ components:
         url:
           type: string
           format: uri
+    PaginatedResponse:
+      type: object
+      properties:
+        totalItems:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
     Order:
       type: object
       properties:
@@ -223,39 +256,6 @@ components:
           description: Items in the order
           items:
             $ref: '#/components/schemas/OrderItem'
-    Error:
-      type: object
-      properties:
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            type: string
-  parameters:
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Zero-based offset for pagination
-      schema:
-        type: integer
-        default: 0
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Number of results to return per page
-      schema:
-        type: integer
-        default: 25
-    customerId:
-      name: id
-      in: path
-      required: true
-      description: Unique customer identifier
-      schema:
-        type: string
   securitySchemes:
     basicAuth:
       type: http
