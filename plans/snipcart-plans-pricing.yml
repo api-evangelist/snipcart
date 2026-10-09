@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-06-12 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-06-12'
 specification: API Commons Plans
 specificationVersion: '0.1'
 provider: Snipcart
@@ -118,3 +123,28 @@ plans:
       currency: USD
       period: monthly
       notes: 2% per transaction plus payment gateway fees; minimum $20/mo for sales under $1,000 USD/month
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units: []
+  plans:
+  - name: Test / Development
+    access: free
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Standard (Under $1k/mo Sales)
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Standard (2% Transaction Fee)
+    access: paid
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
