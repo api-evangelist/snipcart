@@ -2,6 +2,20 @@
   "repo": "snipcart",
   "feeds": [
     {
+      "source": "https://snipcart.com/blog",
+      "feed_url": "https://snipcart.com/blog/rss/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://snipcart.com/blog/rss",
+      "feed_url": "https://snipcart.com/blog/rss",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://ca.linkedin.com/company/snipcart",
       "feed_url": "https://ca.linkedin.com/company/snipcart",
       "title": "",
@@ -14,16 +28,9 @@
       "title": "",
       "saved": 0,
       "method": "none"
-    },
-    {
-      "source": "https://snipcart.com/blog/rss",
-      "feed_url": "https://snipcart.com/blog/rss",
-      "title": "",
-      "saved": 0,
-      "method": "feed"
     }
   ],
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "post_count": 50,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
